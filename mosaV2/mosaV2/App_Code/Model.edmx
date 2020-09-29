@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MOSAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IQC">
+          <Key>
+            <PropertyRef Name="編號" />
+          </Key>
+          <Property Name="編號" Type="int" Nullable="false" />
+          <Property Name="上傳日期" Type="date" />
+          <Property Name="檢驗日期" Type="date" />
+          <Property Name="料號" Type="nvarchar" MaxLength="255" />
+          <Property Name="品名" Type="nvarchar" MaxLength="255" />
+          <Property Name="圖號" Type="nvarchar" MaxLength="255" />
+          <Property Name="圖面版次" Type="nvarchar" MaxLength="255" />
+          <Property Name="檢驗標準書" Type="nvarchar" MaxLength="255" />
+          <Property Name="供應商代號" Type="nvarchar" MaxLength="255" />
+          <Property Name="供應商名稱" Type="nvarchar" MaxLength="255" />
+          <Property Name="進貨單號" Type="nvarchar" MaxLength="255" />
+          <Property Name="樣本數" Type="nvarchar" MaxLength="255" />
+          <Property Name="收貨數" Type="float" />
+          <Property Name="檢驗項目" Type="float" />
+          <Property Name="規格範圍" Type="nvarchar" MaxLength="255" />
+          <Property Name="備註" Type="nvarchar" MaxLength="255" />
+          <Property Name="規格下限" Type="float" />
+          <Property Name="中心值" Type="float" />
+          <Property Name="規格上限" Type="float" />
+          <Property Name="單位" Type="nvarchar" MaxLength="255" />
+          <Property Name="工件No" Type="float" />
+          <Property Name="量測值" Type="nvarchar" MaxLength="255" />
+          <Property Name="判定" Type="nvarchar" MaxLength="255" />
+          <Property Name="量測儀器" Type="nvarchar" MaxLength="255" />
+          <Property Name="原料單號" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="帳號" />
+          </Key>
+          <Property Name="帳號" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="密碼" Type="nvarchar" MaxLength="255" />
+          <Property Name="姓名" Type="nvarchar" MaxLength="255" />
+          <Property Name="權限" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="MOSAModelStoreContainer">
+          <EntitySet Name="IQC" EntityType="Self.IQC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MOSAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IQC">
+          <Key>
+            <PropertyRef Name="編號" />
+          </Key>
+          <Property Name="編號" Type="Int32" Nullable="false" />
+          <Property Name="上傳日期" Type="DateTime" Precision="0" />
+          <Property Name="檢驗日期" Type="DateTime" Precision="0" />
+          <Property Name="料號" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="品名" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="圖號" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="圖面版次" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="檢驗標準書" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="供應商代號" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="供應商名稱" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="進貨單號" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="樣本數" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="收貨數" Type="Double" />
+          <Property Name="檢驗項目" Type="Double" />
+          <Property Name="規格範圍" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="備註" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="規格下限" Type="Double" />
+          <Property Name="中心值" Type="Double" />
+          <Property Name="規格上限" Type="Double" />
+          <Property Name="單位" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="工件No" Type="Double" />
+          <Property Name="量測值" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="判定" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="量測儀器" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="原料單號" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="帳號" />
+          </Key>
+          <Property Name="帳號" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="密碼" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="姓名" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="權限" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MOSAEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IQC" EntityType="Self.IQC" />
+          <EntitySet Name="user" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MOSAModelStoreContainer" CdmEntityContainer="MOSAEntities">
+          <EntitySetMapping Name="IQC">
+            <EntityTypeMapping TypeName="MOSAModel.IQC">
+              <MappingFragment StoreEntitySet="IQC">
+                <ScalarProperty Name="編號" ColumnName="編號" />
+                <ScalarProperty Name="上傳日期" ColumnName="上傳日期" />
+                <ScalarProperty Name="檢驗日期" ColumnName="檢驗日期" />
+                <ScalarProperty Name="料號" ColumnName="料號" />
+                <ScalarProperty Name="品名" ColumnName="品名" />
+                <ScalarProperty Name="圖號" ColumnName="圖號" />
+                <ScalarProperty Name="圖面版次" ColumnName="圖面版次" />
+                <ScalarProperty Name="檢驗標準書" ColumnName="檢驗標準書" />
+                <ScalarProperty Name="供應商代號" ColumnName="供應商代號" />
+                <ScalarProperty Name="供應商名稱" ColumnName="供應商名稱" />
+                <ScalarProperty Name="進貨單號" ColumnName="進貨單號" />
+                <ScalarProperty Name="樣本數" ColumnName="樣本數" />
+                <ScalarProperty Name="收貨數" ColumnName="收貨數" />
+                <ScalarProperty Name="檢驗項目" ColumnName="檢驗項目" />
+                <ScalarProperty Name="規格範圍" ColumnName="規格範圍" />
+                <ScalarProperty Name="備註" ColumnName="備註" />
+                <ScalarProperty Name="規格下限" ColumnName="規格下限" />
+                <ScalarProperty Name="中心值" ColumnName="中心值" />
+                <ScalarProperty Name="規格上限" ColumnName="規格上限" />
+                <ScalarProperty Name="單位" ColumnName="單位" />
+                <ScalarProperty Name="工件No" ColumnName="工件No" />
+                <ScalarProperty Name="量測值" ColumnName="量測值" />
+                <ScalarProperty Name="判定" ColumnName="判定" />
+                <ScalarProperty Name="量測儀器" ColumnName="量測儀器" />
+                <ScalarProperty Name="原料單號" ColumnName="原料單號" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="MOSAModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="帳號" ColumnName="帳號" />
+                <ScalarProperty Name="密碼" ColumnName="密碼" />
+                <ScalarProperty Name="姓名" ColumnName="姓名" />
+                <ScalarProperty Name="權限" ColumnName="權限" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
