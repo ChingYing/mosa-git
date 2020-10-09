@@ -24,7 +24,7 @@ public partial class login : System.Web.UI.Page
         var admin = db.user.Where(m => m.帳號 == id && m.密碼 == pwd).FirstOrDefault();
         if (admin == null)
         {
-            labelshow.Text = "查無此帳號";
+            labelshow.Text = "查無此帳號或者密碼輸入錯誤!";
             return;
         }
         Session["admin"] = admin;
