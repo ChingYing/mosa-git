@@ -12,7 +12,7 @@
                         檢驗日期 : <asp:TextBox runat="server" ID="Start"></asp:TextBox> ~ <asp:TextBox runat="server" ID="End"></asp:TextBox>
                         項目 : <asp:DropDownList runat="server" ID="itemDrop">
                             <asp:ListItem>請選擇</asp:ListItem>
-                            <asp:ListItem>供應商</asp:ListItem>
+                            <asp:ListItem>供應商名稱</asp:ListItem>
                             <asp:ListItem>品名</asp:ListItem>
                             <asp:ListItem>料號</asp:ListItem>
                         </asp:DropDownList>
