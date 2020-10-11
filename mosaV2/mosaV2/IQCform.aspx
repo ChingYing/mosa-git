@@ -9,11 +9,17 @@
             <div class="col">
                 <div class="card-body" aria-sort="none">
                     <div>
-                        檢驗日期 : <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-                        品名 : <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-                        料號 : <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
-                        <asp:Button ID="Button1" runat="server" Class="btn btn-success" Text="搜尋" />
+                        檢驗日期 : <asp:TextBox runat="server" ID="Start"></asp:TextBox> ~ <asp:TextBox runat="server" ID="End"></asp:TextBox>
+                        項目 : <asp:DropDownList runat="server" ID="itemDrop">
+                            <asp:ListItem>請選擇</asp:ListItem>
+                            <asp:ListItem>供應商名稱</asp:ListItem>
+                            <asp:ListItem>品名</asp:ListItem>
+                            <asp:ListItem>料號</asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:TextBox runat="server" ID="itemValue"></asp:TextBox>
+                        <asp:Button ID="BtnSearch" runat="server" Class="btn btn-success" Text="搜尋" OnClick="BtnSearch_Click" />
                     </div>
+                    <asp:Label ID="Label1" runat="server" ForeColor="red"></asp:Label>
                     <br />
                     <br />
                     <asp:GridView ID="GridView1" runat="server" CssClass="table table-hover" DataSourceID="SqlDataSource1" AutoGenerateColumns="False">
